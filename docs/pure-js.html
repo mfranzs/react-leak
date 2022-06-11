@@ -1,0 +1,29 @@
+<title>100k Divs Vertically, then Clear</title>
+
+<div id="root"></div>
+
+<script>
+  const root = document.getElementById("root");
+
+  let i = 0;
+  const int = setInterval(() => {
+    console.log(i);
+
+    for (const child of [...root.childNodes].reverse()) {
+      child.remove();
+    }
+
+    for (let j = 0; j < 100 * 1000; j += 1) {
+      const d = document.createElement("div");
+      d.innerText = "j" + j + "-" + Math.random();
+      root.appendChild(d);
+    }
+
+    i += 1;
+
+    if (i == 100) {
+      clearInterval(int);
+      root.remove();
+    }
+  }, 100);
+</script>
