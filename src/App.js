@@ -3,35 +3,30 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [done, setDone] = useState(false);
-  const [f, setF] = useState();
+  const [i, setI] = useState(0);
 
   useEffect(() => {
-    let i = 0;
-    const int = setInterval(() => {
-      setF(Math.random());
-      i += 1;
-      if (i == 10) {
-        clearInterval(int);
-        setDone(true);
-      }
+    setInterval(() => {
+      setI((curI) => (curI += 1));
     }, 100);
   }, []);
 
   let c = [];
-  for (let i = 0; i < (done ? 0 : 100 * 1000); i++) {
-    c.push(
-      <div>
-        {i} - {Math.random()}
-      </div>
-    );
+  if (i > 2 && i < 50) {
+    for (let j = 0; j < 100 * 1000; j++) {
+      c.push(
+        <div>
+          {j} - {Math.random()}
+        </div>
+      );
+    }
   }
 
   return (
     <div className="App">
-      Memory Test
+      Memory Test - {i}
       <br />
-      {done ? null : c}
+      {c}
     </div>
   );
 }
