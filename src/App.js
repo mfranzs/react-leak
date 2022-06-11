@@ -27,7 +27,13 @@ function App() {
     );
   }
 
-  return <div className="App">{done ? null : c}</div>;
+  return (
+    <div className="App">
+      Memory Test
+      <br />
+      {done ? null : c}
+    </div>
+  );
 }
 
 export default App;
