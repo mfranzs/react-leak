@@ -11,7 +11,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://mfranzs.github.io/react-leak",
+  "homepage": "https://mfranzs.github.io/react-leak/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
