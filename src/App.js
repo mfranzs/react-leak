@@ -11,7 +11,7 @@ function App() {
     const int = setInterval(() => {
       setF(Math.random());
       i += 1;
-      if (i == 20) {
+      if (i == 10) {
         clearInterval(int);
         setDone(true);
       }
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   let c = [];
-  for (let i = 0; i < (done ? 1 : 100 * 1000); i++) {
+  for (let i = 0; i < (done ? 0 : 100 * 1000); i++) {
     c.push(
       <div>
         {i} - {Math.random()}
